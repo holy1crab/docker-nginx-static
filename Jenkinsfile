@@ -1,9 +1,10 @@
 pipeline {
     agent none
     stages {
-        stage('Example 1') {
+        stage('Build Image') {
             agent {
-                dockerfile true
+                filename "Dockerfile"
+                label "docker-label"
             }
             steps {
                 sh 'ls /usr/share/nginx/html'
