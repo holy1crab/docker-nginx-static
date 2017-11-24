@@ -6,6 +6,7 @@ pipeline {
                 dockerfile true
             }
             steps {
+                sh 'ls /usr/share/nginx/html'
             }
         }
     }
