@@ -1,6 +1,6 @@
 agent {
     dockerfile {
         filename "Dockerfile"
-        label "docker-label"
+        label "test-2"
     }
 }
