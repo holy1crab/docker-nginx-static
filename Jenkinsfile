@@ -4,7 +4,7 @@ pipeline {
         stage('Example 1') {
             agent {
                 dockerfile {
-                    label 'white/docker-nginx-static'
+                    label 'docker-nginx-static'
                 }
             }
             steps {
