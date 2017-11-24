@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Example 1') {
             agent {
-                dockerfile true
+                dockerfile {
+                    label 'white/docker-nginx-static'
+                }
             }
             steps {
                 sh 'ls /usr/share/nginx/html'
