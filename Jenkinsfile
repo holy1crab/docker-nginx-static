@@ -1,15 +1,9 @@
-pipeline {
-    agent {
-        dockerfile {
-            label "white/docker-nginx-static"
-            filename "Dockerfile"
-        }
-    }
-    stages {
-        stage('Test Stage') {
-            steps {
-                sh 'ls /usr/share/nginx/html'
-            }
-        }
+node {
+    checkout scm
+
+    def customImage = docker.build("my-image:${env.BUILD_ID}")
+
+    customImage.inside {
+        sh 'echo hello'
     }
 }
