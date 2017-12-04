@@ -1,9 +1,12 @@
 node {
     checkout scm
 
-    def customImage = docker.build("white/docker-nginx-static:latest")
-
-    customImage.inside {
-        sh 'echo hello'
+    docker.withRegistry('http://localhost:5000') {
+        def customImage = docker.build("white/docker-nginx-static:latest")
+        customImage.push()
     }
+
+//    customImage.inside {
+//        sh 'echo hello'
+//    }
 }
