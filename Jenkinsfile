@@ -1,6 +1,7 @@
 pipeline {
     agent {
         dockerfile {
+            label "white/docker-nginx-static"
             filename "Dockerfile"
         }
     }
